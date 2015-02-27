@@ -32,3 +32,13 @@ build:
         # - script:
         #        name: rspec
         #        code: bundle exec rspec
+
+deploy:
+    steps:
+        - patrickwolleb/elastic-beanstalk-deploy:
+            key: $AMAZON_KEY
+            secret: $AMAZON_SECRET_KEY
+            app_name: CITest
+            env_name: citest-env
+            commit_message: My Commit Message
+            region: eu-west-1
